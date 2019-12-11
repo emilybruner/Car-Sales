@@ -10,15 +10,15 @@ import {addFeature, removeFeature, updateTotal} from './actions/actions';
 
 const App = (props) => {
   
-const removeFeature = item => {
-  props.removeFeature(item);
-  props.updateTotal(-item.price)
-};
-
-const buyItem = item => {
-  props.addFeature(item);
-  props.updateTotal(item.price)
-};
+  const removeFeature = item => {
+    props.removeFeature(item);
+    props.updateTotal(-item.price)
+  };
+  
+  const buyItem = item => {
+    props.addFeature(item);
+    props.updateTotal(item.price)
+  };
 
 
   return (
