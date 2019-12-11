@@ -21,10 +21,11 @@ export const reducer = (state = initialState, action) => {
     switch(action.type) {
        case "ADD_ITEM":
            return {
-               ...state.car,
-               features: state.car.features.includes(action.payload) ? [...state.car.features] : [...state.car.features, action.payload]
+               ...state,
+               car: {...state.car, features: state.car.features.includes(action.payload) ? [...state.car.features] : [...state.car.features, action.payload]}
+               
            }
-    }
+    
     case "REMOVE_ITEM": 
     return {
         ...state,
@@ -41,10 +42,5 @@ export const reducer = (state = initialState, action) => {
         default: 
         return state;
 }
-      const removeFeature = item => {
-        // dispatch an action here to remove an item
-      };
-    
-      const buyItem = item => {
-        // dipsatch an action here to add an item
-      };
+}
+ 
